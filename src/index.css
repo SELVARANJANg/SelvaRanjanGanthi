@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #F3EDE0;
+  --cream2: #E8E0CE;
+  --ink: #000000;
+  --mute: #6b6557;
+  --sans: 'Inter Tight', -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-family: var(--sans);
+}
+
+::selection {
+  background-color: #000;
+  color: #F3EDE0;
+}
+
+/* Custom serif italic font */
+.font-serif-italic {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hero reveal */
+@keyframes heroUp {
+  0% {
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-hero-up {
+  animation: heroUp 1.1s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+.animate-hero-up-delay {
+  animation: heroUp 1.1s cubic-bezier(0.2, 0.9, 0.2, 1) 0.14s forwards;
+}
+
+/* Scroll indicator bounce */
+@keyframes scrollDot {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+.animate-scroll-dot {
+  animation: scrollDot 1.6s ease-in-out infinite;
+}
+
+/* Hide scrollbar for tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
